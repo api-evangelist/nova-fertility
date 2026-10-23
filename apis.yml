@@ -1,25 +1,76 @@
 aid: nova-fertility
+
 name: Nova Fertility
-description: 'Nova Fertility is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by nea) and added to the network as a stub for full-pipeline profiling.'
+
+image: https://a.storyblok.com/f/290132/1733x1155/121c9f5059/baby-and-dog.jpg
+
+description: 'Nova IVF is a leading fertility clinic offering personalized IVF and reproductive health services. The company provides patient-centered care, advanced reproductive technologies, and a range of treatment options to help individuals and couples achieve their family building goals. Their website offers detailed information about clinics, doctors, success rates, and resources for prospective patients.'
+
 url: https://raw.githubusercontent.com/api-evangelist/nova-fertility/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-22 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-22'
+
 modified: '2026-10-22'
+
 tags:
 - Company
-apis: []
+- Fertility
+- Healthcare
+- IVF
+- ReproductiveHealth
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- nea
+
 common:
+- type: Hosts
+  url: hosts/nova-fertility-hosts.yml
+- type: Vendors
+  url: vendors/nova-fertility-vendors.yml
+- type: PrivacyPolicy
+  url: https://www.novaivf.com/privacy-policy
+- type: Blog
+  url: https://www.novaivf.com/blog
+- type: DomainSecurity
+  url: security/nova-fertility-domain-security.yml
 - type: Website
   url: https://www.novaivf.com
+- type: Image
+  url: https://www.novaivf.com/_astro/nova-logo-white_1PFvHf.webp
+
+apis: []
+
+x-backed-by:
+- nea
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-10-22'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://www.novaivf.com/mcp
+    status: 403
+  - url: https://www.novaivf.com
+    status: 200
+x-enrichment:
+  date: '2026-10-22'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
